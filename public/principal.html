@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/libs/selectize.default.css">
+    <link rel="stylesheet" href="css/libs/tooltipster.bundle.min.css" />
+    
+</head>
+<body>
+    <div class="container">
+    <!-- Seja bem vindo ao curso de jQuery :) -->
+    <h1 class="center" > <span class="logo">Alura </span>typer</h1>
+    <p class="frase center">Seja bem vindo! Ao clicar no campo de digitação o jogo se inicia (inclusive com esse texto) e caso digite a frase corretamente 
+        ela é adicionada no placar. É necessário clicar no botão a direta para salvar seu resultado no servidor.</p>
+
+        <div class="center">
+        <img src="img/spinner.gif" id="spinner" alt="Carregando...">
+            <p id="erro">Ocorreu um erro, por favor tente novamente mais tarde</p>
+        </div>
+    <ul class="informacoes center">
+        <li> <i class="small material-icons yellow-text icones">description</i>   <span id="tamanho-frase" >  30</span> palavras</li>
+        <li>  <i class="small material-icons yellow-text icones">query_builder</i> <span id="tempo-digitacao" > 60 </span>  segundos</li>
+        
+    </ul>
+
+
+    <textarea class="campo-digitacao" rows="8" cols="40"> </textarea>
+
+
+    <div class="botoes"> 
+
+        <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light purple tooltip" title="Reiniciar a área de texto">
+            <i class="material-icons">restore</i></a> 
+        
+            <a id="botao-placar" class="btn-floating btn-large waves-effect waves-light purple tooltip" title="Mostrar placar" >
+                <i class="material-icons">assignment</i>
+            </a>
+
+            <a id="botao-frase" class="btn-floating btn-large waves-effect waves-light purple tooltip" title="Troca frase aleatoriamente" >
+                <i class="material-icons">shuffle</i>
+            </a>
+
+            <a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light purple tooltip" title="Trocar frase">
+                <i class="material-icons">repeat</i>
+            </a>
+            Frase:
+            <input class="center" type="number" id="frase-id" max="10" min="0">
+
+            Username:
+            <div class="select-usuarios" style="display: inline-block; width: 150px; vertical-align: middle; ">
+                <select id="usuarios" >
+                    <option value="Dedos rápidos">Dedos rápidos</option>
+                    <option value="Maestro">Maestro</option>
+                    <option value="Mestre">Mestre</option>
+                </select>
+               </div>
+
+            <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light purple tooltip" title="Salvar todo o placar">
+                <i class="material-icons">cloud_upload</i>
+            </a>
+    </div>
+
+    <ul class="center">
+        <li> <span id="contador-caracteres" style="color: #f4cf0a;"> 0 </span> caracteres digitados</li>
+        <li> <span id="contador-palavras" style="color: #f4cf0a;"> 0 </span> palavras digitadas</li>
+    </ul>
+
+    <section class="placar">
+        <h3 class="center" style="color: #f4cf0a; padding-right: 9%;">Placar</h3>
+        <table class="centered bordered">
+            <thead>
+                <tr>
+                    <th style="color: #f4cf0a;">Nome</th>
+                    <th style="color: purple;">Palavras por segundo</th>
+                    <th style="color: #f4cf0a;">Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        
+    </section>
+</div>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"> </script>
+    <script src="js/placar.js"></script>
+    <script src="js/frase.js"></script>
+    <script src="js/selectize.js"></script>
+    <script src="js/tooltipster.bundle.min.js"></script>
+</body>
+</html>
